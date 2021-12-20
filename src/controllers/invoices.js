@@ -23,7 +23,8 @@ import {
   lineAddress as getLineAddress,
   price as getPrice,
   formatDate,
-  formatMoney
+  formatMoney,
+  birthDate
 } from '@ecomplus/utils'
 
 import {
@@ -87,6 +88,8 @@ export default function () {
           <div class="fs-17">
             <span class="text-muted">${i18n(i19buyer)}:</span><br>
             <strong>${(buyer ? (buyer.corporate_name || getFullName(buyer)) : '')}</strong><br>
+            ${(buyer && buyer.birth_date ? `<span>Data de Nascimento: ${birthDate(buyer)}</span><br>` : '')}
+            ${(buyer && buyer.gender ? `<span>Gênero: ${buyer.gender}</span><br>` : '')}
             ${(buyer
               ? buyer.registry_type === 'p'
                 ? `CPF: ${formatCPF(buyer.doc_number)}`
