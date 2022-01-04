@@ -370,7 +370,7 @@ export default function () {
                 'extra_discount.discount_coupon,' +
                 'extra_discount.app.label,' +
                 'created_at,' +
-                'updated_at'
+                'updated_at' 
               break
 
             case 'customers':
