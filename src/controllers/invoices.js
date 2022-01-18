@@ -162,6 +162,10 @@ export default function () {
                 <strong>${(shippingLine && shippingLine.app
                   ? `${shippingLine.app.label} (${shippingLine.app.carrier})`
                   : order.shipping_method_label)}</strong><br>
+              Agendamento:
+                <strong>${(shippingLine && shippingLine.scheduled_delivery
+                  ? `${shippingLine.scheduled_delivery.end}`
+                  : `Nenhuma marcação de horário`)}</strong><br>
               ${i18n(i19paymentMethod)}:
                 <strong>${(transaction && transaction.app
                   ? transaction.app.label +
